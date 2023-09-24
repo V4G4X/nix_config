@@ -10,6 +10,9 @@
     pkgs.vim
     pkgs.direnv
     pkgs.gh
+    pkgs.cmake
+    pkgs.ninja
+    pkgs.dfu-util
     pkgs.neovim
     pkgs.nixfmt
     pkgs.nodejs
