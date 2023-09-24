@@ -21,6 +21,7 @@
     pkgs.delta
     pkgs.ripgrep
     pkgs.cargo
+    pkgs.speedtest-cli
   ];
 
   # Use a custom configuration.nix location.
