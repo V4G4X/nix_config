@@ -11,7 +11,6 @@
     pkgs.nixfmt
     pkgs.nodejs
     pkgs.tree
-    pkgs.tree
     pkgs.wget
     pkgs.zoxide
     pkgs.bat
