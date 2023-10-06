@@ -25,6 +25,7 @@
     pkgs.ripgrep
     pkgs.cargo
     pkgs.speedtest-cli
+    pkgs.rar
   ];
 
   # Use a custom configuration.nix location.
