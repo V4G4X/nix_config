@@ -17,12 +17,7 @@
     nodejs
   ];
 
-  homebrew = {
-    enable = true;
-    global.brewfile = true;
-    casks = [ "mqttx" ];
-    onActivation.cleanup = "uninstall";
-  };
+  homebrew = (import ./modules/homebrew);
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
@@ -62,65 +57,5 @@
     home = "/Users/varungawande";
   };
 
-  home-manager.users.varungawande = { pkgs, ... }: {
-
-    programs = {
-      fzf = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-      direnv = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-      gh = {
-        enable = true;
-        settings = {
-          git_protocol = "ssh";
-          prompt = "enabled";
-        };
-      };
-      git = {
-        enable = true;
-        userEmail = "varun.gawande@espressif.com";
-        userName = "Varun Gawande";
-        extraConfig = {
-          core.pager = "delta";
-          interactive.diffFilter = "delta --color-only";
-          delta = {
-            navigate = true;
-            light = false;
-          };
-        };
-      };
-      lazygit = {
-        enable = true;
-        settings = {
-          gui.showFileTree = false;
-          gui.nerdFontsVersion = "3";
-          git.paging.pager = "delta --dark --paging=never";
-          os.editPreset = "nvim";
-        };
-      };
-      neovim = {
-        enable = true;
-        defaultEditor = true;
-        vimAlias = true;
-      };
-    };
-
-    home.packages = with pkgs; [
-      bat
-      tree
-      zoxide
-      ripgrep
-      delta
-      cargo
-      htop
-      speedtest-cli
-      yt-dlp
-    ];
-
-    home.stateVersion = "22.05";
-  };
+  home-manager.users.varungawande = ./modules/home-manager;
 }
