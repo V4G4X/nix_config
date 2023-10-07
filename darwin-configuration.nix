@@ -43,4 +43,16 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
+  # System Configurations
+  environment.loginShell = pkgs.zsh;
+  fonts.fonts = [ (pkgs.nerdfonts.override { fonts = ["Meslo" "FiraCode" "FiraMono" ]; }) ];
+  system.defaults.NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
+  system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
+  system.defaults.NSGlobalDomain.KeyRepeat = 1;
+  system.defaults.dock.autohide = true;
+  system.defaults.dock.static-only = true;
+  system.defaults.dock.wvous-bl-corner = 2; # Bottom-Left hot corner is "Mission Control"
+  system.defaults.finder.AppleShowAllExtensions = true;
+
 }
