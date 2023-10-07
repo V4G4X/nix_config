@@ -6,26 +6,14 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [
-    pkgs.vim
-    pkgs.direnv
-    pkgs.gh
-    pkgs.cmake
-    pkgs.ninja
-    pkgs.dfu-util
-    pkgs.neovim
-    pkgs.nixfmt
-    pkgs.nodejs
-    pkgs.tree
-    pkgs.wget
-    pkgs.zoxide
-    pkgs.bat
-    pkgs.lazygit
-    pkgs.delta
-    pkgs.ripgrep
-    pkgs.cargo
-    pkgs.speedtest-cli
-    pkgs.rar
+  environment.systemPackages = with pkgs; [
+    vim
+    cmake
+    ninja
+    dfu-util
+    nodejs
+    wget
+    rar
   ];
 
   # Use a custom configuration.nix location.
@@ -55,4 +43,33 @@
   system.defaults.dock.wvous-bl-corner = 2; # Bottom-Left hot corner is "Mission Control"
   system.defaults.finder.AppleShowAllExtensions = true;
 
+  # Home Manager configurations
+  imports = [ <home-manager/nix-darwin> ];
+
+  users.users.varungawande = {
+    name = "varungawande";
+    home = "/Users/varungawande";
+  };
+
+  home-manager.users.varungawande = { pkgs, ... }: {
+    home = {
+      packages = with pkgs; [
+        htop
+        fzf
+        direnv
+        gh
+        neovim
+        nixfmt
+        tree
+        zoxide
+        bat
+        lazygit
+        delta
+        ripgrep
+        cargo
+        speedtest-cli
+      ];
+      stateVersion = "22.05";
+    };
+  };
 }

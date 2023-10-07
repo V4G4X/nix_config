@@ -1,11 +1,19 @@
 # Nix Configurations
 
-This repo contains my system-wide configurations using nix.  
+This repo contains my system and user configurations using nix.
 
 ## Installation
 
 ```sh
 gh repo clone V4G4X/nix_config ~/.nixpkgs
+```
+
+Once `nix` and `nix-darwin` are set up:
+
+```sh
+# For Home Manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
 ```
 
 ## Prerequisites
