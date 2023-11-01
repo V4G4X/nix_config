@@ -1,6 +1,7 @@
 {
   enable = true;
   global.brewfile = true;
-  casks = [ "mqttx" ];
+  brews = [ "aws-sam-cli" ];
+  casks = [ "mqttx" "docker" ];
   onActivation.cleanup = "uninstall";
 }
