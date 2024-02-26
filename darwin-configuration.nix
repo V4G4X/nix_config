@@ -14,7 +14,6 @@
     ninja
     dfu-util
     nixpkgs-fmt
-    nodejs
   ];
 
   homebrew = (import ./modules/homebrew);
