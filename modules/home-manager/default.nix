@@ -29,7 +29,6 @@
         git.paging.pager = "delta --dark --paging=never";
         git.log.showGraph = "always";
         git.log.showWholeGraph = false;
-        os.editPreset = "vscode";
       };
     };
     neovim = {
