@@ -20,14 +20,6 @@
       enable = true;
       userEmail = "varun.gawande@espressif.com";
       userName = "Varun Gawande";
-      extraConfig = {
-        core.pager = "delta";
-        interactive.diffFilter = "delta --color-only";
-        delta = {
-          navigate = true;
-          light = false;
-        };
-      };
     };
     lazygit = {
       enable = true;
