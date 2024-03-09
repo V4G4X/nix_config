@@ -49,14 +49,16 @@
 
   home.packages = with pkgs; [
     bat
-    tree
-    zoxide
-    ripgrep
-    delta
+    btop
     cargo
+    delta
     htop
+    ripgrep
     speedtest-cli
+    tmux
+    tree
     yt-dlp
+    zoxide
   ];
 
   home.stateVersion = "22.05";
