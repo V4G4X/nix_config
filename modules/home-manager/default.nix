@@ -43,6 +43,7 @@
     btop
     cargo
     delta
+    deno
     htop
     ripgrep
     speedtest-cli
