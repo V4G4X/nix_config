@@ -51,6 +51,8 @@
     tree
     yt-dlp
     zoxide
+    aria2
+    ffmpeg
   ];
 
   home.stateVersion = "22.05";
