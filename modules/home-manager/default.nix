@@ -42,7 +42,6 @@
     bat
     btop
     cargo
-    delta
     deno
     htop
     ripgrep
