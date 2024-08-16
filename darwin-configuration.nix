@@ -36,7 +36,7 @@
 
   # System Configurations
   environment.loginShell = pkgs.zsh;
-  fonts.fonts = [
+  fonts.packages = [
     (pkgs.nerdfonts.override { fonts = [ "Meslo" "FiraCode" "FiraMono" ]; })
   ];
 
