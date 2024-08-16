@@ -14,6 +14,8 @@
     ninja
     dfu-util
     nixpkgs-fmt
+    ncdu
+    tmux
   ];
 
   homebrew = (import ./modules/homebrew);
