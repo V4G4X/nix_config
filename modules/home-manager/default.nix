@@ -52,6 +52,7 @@
     zoxide
     aria2
     ffmpeg
+    nnn
   ];
 
   home.stateVersion = "22.05";
