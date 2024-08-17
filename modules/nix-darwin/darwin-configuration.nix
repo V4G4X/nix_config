@@ -18,7 +18,7 @@
     tmux
   ];
 
-  homebrew = (import ./modules/homebrew);
+  homebrew = (import ../homebrew);
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
@@ -49,14 +49,4 @@
   system.defaults.dock.static-only = true;
   system.defaults.dock.wvous-bl-corner = 2; # Bottom-Left hot corner is "Mission Control"
   system.defaults.finder.AppleShowAllExtensions = true;
-
-  # Home Manager configurations
-  imports = [ <home-manager/nix-darwin> ];
-
-  users.users.varungawande = {
-    name = "varungawande";
-    home = "/Users/varungawande";
-  };
-
-  home-manager.users.varungawande = ./modules/home-manager;
 }

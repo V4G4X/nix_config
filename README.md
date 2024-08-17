@@ -1,6 +1,6 @@
 # Nix Configurations
 
-This repo contains my system and user configurations using nix.
+This repo contains my system and user configurations using nix (flakes).
 
 ## Installation
 
@@ -8,20 +8,15 @@ This repo contains my system and user configurations using nix.
 gh repo clone V4G4X/nix_config ~/.nixpkgs
 ```
 
-Once `nix` and `nix-darwin` are set up:
+## Usage
 
-```sh
-# For Home Manager
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
+```
+nix build .#darwinConfiguration.Varun-MBP.system --extra-experimental-features "nix-command flakes"
+
+./result/sw/bin/darwin-rebuild switch --flake .  # install nix-darwin
 ```
 
-## Prerequisites
-
-- [Nix](https://nixos.org/download.html)
-- [nix-darwin](https://github.com/LnL7/nix-darwin/)
-
-I typically found that following behind [this](https://github.com/MatthiasBenaets/nixos-config/blob/master/darwin.org) helps.
+Currently attempting to follow [this tutorial](https://xyno.space/post/nix-darwin-introduction).
 
 <!-- Restore a backed up dock to this location if it's bugging.
 (Assuming you've backed it up before. Or else delete it and let MacOS build a new dock for you).
