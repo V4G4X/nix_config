@@ -1,6 +1,7 @@
 { pkgs, ... }: {
 
   programs = {
+    fd.enable = true;
     fzf = {
       enable = true;
       enableZshIntegration = true;
