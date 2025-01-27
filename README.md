@@ -19,7 +19,7 @@ gh repo clone V4G4X/nix_config ~/.nixpkgs
    OR
 
    ```sh
-   nix build .#darwinConfiguration.Varun-MBP.system --extra-experimental-features "nix-command flakes"
+   nix build .#darwinConfiguration.Varuns-MacBook-Pro.system --extra-experimental-features "nix-command flakes"
    ```
 
 2. Switch to the Darwin Configuration:

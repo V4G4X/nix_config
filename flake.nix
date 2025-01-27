@@ -15,7 +15,7 @@
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }: {
 
-    darwinConfigurations."Varun-MBP" = darwin.lib.darwinSystem {
+    darwinConfigurations."Varuns-MacBook-Pro" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./modules/nix-darwin/darwin-configuration.nix
