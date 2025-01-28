@@ -16,6 +16,7 @@
     nixpkgs-fmt
     ncdu
     tmux
+    stow
   ];
 
   homebrew = (import ../homebrew);
