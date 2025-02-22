@@ -54,6 +54,7 @@
     aria2
     ffmpeg
     nnn
+    yazi
   ];
 
   home.stateVersion = "22.05";

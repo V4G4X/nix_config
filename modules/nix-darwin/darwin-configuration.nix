@@ -17,6 +17,8 @@
     ncdu
     tmux
     stow
+    jq
+    yq
   ];
 
   homebrew = (import ../homebrew);
