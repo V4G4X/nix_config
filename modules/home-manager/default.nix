@@ -24,13 +24,6 @@
     };
     lazygit = {
       enable = true;
-      settings = {
-        gui.showFileTree = false;
-        gui.nerdFontsVersion = "3";
-        git.paging.pager = "delta --dark --paging=never";
-        git.log.showGraph = "always";
-        git.log.showWholeGraph = false;
-      };
     };
     neovim = {
       enable = true;
