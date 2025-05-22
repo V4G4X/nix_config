@@ -28,7 +28,7 @@
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true; # Removed because deprecated
   # nix.package = pkgs.nix;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
@@ -40,13 +40,16 @@
   system.stateVersion = 4;
 
   # System Configurations
-  environment.loginShell = pkgs.zsh;
-  fonts.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "Meslo" "FiraCode" "FiraMono" ]; })
-  ];
+  # environment.loginShell = pkgs.zsh; # Removed because deprecated
 
-  system.defaults.NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
-  system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
-  system.defaults.NSGlobalDomain.KeyRepeat = 1;
-  system.defaults.finder.AppleShowAllExtensions = true;
+  fonts.packages = 
+    let 
+      fontNames = [ "meslo-lg" "fira-code" "fira-mono" ];
+    in
+      builtins.map (name: pkgs.nerd-fonts.${name}) fontNames;
+
+  # system.defaults.NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
+  # system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
+  # system.defaults.NSGlobalDomain.KeyRepeat = 1;
+  # system.defaults.finder.AppleShowAllExtensions = true;
 }
