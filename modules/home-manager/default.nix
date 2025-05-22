@@ -48,6 +48,8 @@
     ffmpeg
     nnn
     yazi
+    fortune
+    cowsay
   ];
 
   home.stateVersion = "22.05";
