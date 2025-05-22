@@ -19,6 +19,7 @@
     stow
     jq
     yq
+    curl
   ];
 
   homebrew = (import ../homebrew);
