@@ -33,6 +33,7 @@
   };
 
   home.packages = with pkgs; [
+    eza
     bat
     btop
     cargo
