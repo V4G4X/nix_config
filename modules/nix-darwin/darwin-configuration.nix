@@ -43,7 +43,7 @@
 
   fonts.packages = 
     let 
-      fontNames = [ "meslo-lg" "fira-code" "fira-mono" ];
+      fontNames = [ "terminess-ttf" "meslo-lg" "fira-code" "fira-mono" ];
     in
       builtins.map (name: pkgs.nerd-fonts.${name}) fontNames;
 }
