@@ -13,21 +13,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, darwin, ... }: {
-
+  outputs = { self, nixpkgs, home-manager, darwin, ... }:
+  let
+    username = "varungawande";
+  in {
     darwinConfigurations."Varuns-MacBook-Pro" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
+      specialArgs = { inherit username; };
       modules = [
         ./modules/nix-darwin/darwin-configuration.nix
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          users.users.varungawande = {
-            name = "varungawande";
-            home = "/Users/varungawande";
+          users.users.${username} = {
+            name = username;
+            home = "/Users/${username}";
           };
-          home-manager.users.varungawande = import ./modules/home-manager;
+          home-manager.users.${username} = import ./modules/home-manager;
         }
       ];
     };

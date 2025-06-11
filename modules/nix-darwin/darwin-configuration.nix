@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -38,6 +38,9 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
+  # Set primary user for homebrew and other user-specific options
+  system.primaryUser = username;
 
   # System Configurations
 
