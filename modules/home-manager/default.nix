@@ -33,6 +33,7 @@
   };
 
   home.packages = with pkgs; [
+    cfn-nag
     eza
     bat
     btop
